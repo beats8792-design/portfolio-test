@@ -1,0 +1,226 @@
+.jb_navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  background-color: var(--c-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 40px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 12;
+
+  .top_content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .location {
+      font-family: var(--f-link-1);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--c-white);
+      text-transform: uppercase;
+    }
+
+    .close_btn {
+      margin: 0 auto;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid var(--c-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--c-white);
+        transition: all 0.3s ease-in-out;
+      }
+
+      &,
+      & * {
+        cursor: pointer;
+      }
+
+      &:hover {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    a:has(.button) {
+      margin-left: auto;
+    }
+  }
+
+  .middle_content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    .main_menu {
+      ul {
+        li {
+          --height: 80px;
+          font-family: var(--f-fancy-1);
+          font-size: 100px;
+          height: var(--height);
+          font-weight: 500;
+          color: var(--c-white);
+          text-transform: uppercase;
+          line-height: var(--height);
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 10px;
+
+          .link {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: var(--height);
+            overflow: hidden;
+
+            span {
+              height: var(--height);
+              line-height: var(--height);
+              transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+              span {
+                transform: translateY(-100%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom_content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    .copywrite {
+      font-family: var(--f-link-1);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--c-white);
+      text-transform: uppercase;
+    }
+
+    .social_media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      a {
+        font-family: var(--f-link-1);
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--c-white);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 100%;
+          width: 0;
+          height: 2px;
+          background-color: var(--c-white);
+          transition: all 0.3s ease-in-out;
+        }
+
+        svg {
+          width: 24px;
+          height: 24px;
+          margin-left: 3px;
+        }
+
+        &:hover::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+
+    .top_content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+
+      .location {
+        display: none;
+      }
+
+      .close_btn {
+        margin: 0;
+      }
+
+      a:has(.button) {
+        margin-left: 0;
+      }
+    }
+
+    .middle_content {
+      .main_menu {
+        ul {
+          li {
+            --height: 30px;
+            font-size: 40px;
+          }
+        }
+      }
+    }
+
+    .bottom_content {
+      justify-content: center;
+
+      .copywrite {
+        display: none;
+      }
+
+      .social_media {
+        a {
+          font-size: 14px;
+
+          svg {
+            width: 16px;
+            height: 16px;
+            margin-left: 3px;
+          }
+        }
+      }
+    }
+  }
+}

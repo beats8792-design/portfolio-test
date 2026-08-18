@@ -1,0 +1,125 @@
+.jb_header {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100vh;
+  padding: 10px 20px;
+
+  transform: rotate(-90deg) translate(-50%, 0);
+  transform-origin: left top;
+
+  font-family: var(--f-link-1);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--c-white);
+  text-transform: lowercase;
+
+  .menu_btn {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+
+    .bar {
+      position: relative;
+      width: 24px;
+      height: 2px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        display: block;
+        height: 2px;
+        background-color: var(--c-white);
+        transition: all 0.3s ease-in-out;
+      }
+
+      &::before {
+        top: -2px;
+        width: 24px;
+      }
+
+      &::after {
+        top: 5px;
+        width: 16px;
+      }
+    }
+
+    &:hover {
+      .bar {
+        &::before {
+          width: 16px;
+        }
+
+        &::after {
+          width: 24px;
+        }
+      }
+    }
+  }
+
+  .scroller {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    .scroll_to_top {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      margin-left: 0px;
+      margin-right: 10px;
+      opacity: 0;
+
+      &.visible {
+        opacity: 1;
+        margin-left: 10px;
+        margin-right: 0px;
+      }
+    }
+
+    .scroll_bar {
+      width: 80px;
+      height: 2px;
+      background-color: var(--c-white);
+      position: relative;
+
+      .scroll_track {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 70%;
+        height: 2px;
+
+        .scroll_thumb {
+          position: absolute;
+          top: 50%;
+          transform: translate(50%, -50%);
+          display: block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: var(--c-accent);
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 10px;
+  }
+}
