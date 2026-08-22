@@ -26,11 +26,11 @@ export default function Header() {
         <span className="text">Menu</span>
       </div>
 
-      <div className="name">jazbah</div>
+      {/* <div className="name">jazbah</div> */}
 
       <div className="scroller">
         <span
-          className={`scroll_to_top ${scrolled > 10 ? "visible" : ""}`}
+          className={`scroll_to_top ${scrolled > 90 ? "visible" : ""}`}
           onClick={scrollTop}
           data-cursor-type="link"
         >
