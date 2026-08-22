@@ -1,18 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import "./../../styles/components/footer.scss";
-import TextPressure from "../animations/TextPressure";
-import { useTheme } from "@/context/use-theme";
-
-const texts = [
-  "Front-End",
-  "Back-End",
-  "Full-Stack",
-  "Shopify",
-  "Wordpress",
-  "App",
-];
+import "./../../../styles/components/footer.scss";
+import Talk from "./Talk";
+import BgText from "./BgText";
+import TextMarque from "./TextMarque";
 
 const socials = [
   {
@@ -34,31 +24,33 @@ const socials = [
 ];
 
 export default function Footer() {
-  const { startNavigating } = useTheme();
   return (
     <footer className="footer_section">
-      <div className="middle_content" onClick={() => startNavigating("/contact")}>
-        <TextPressure
-          text="Contact"
-          flex
-          alpha={false}
-          stroke={true}
-          textColor="#ffffff"
-          strokeColor="#ffffff"
-          minFontSize={24}
-        />
+      <TextMarque />
+      <div className="middle_content">
+        <Talk />
+
+        <Link
+          className="mail w-fit mx-auto"
+          href="mailto:jazbahulalam@gmail.com"
+          data-cursor-type="link"
+        >
+          jazbahulalam@gmail.com
+        </Link>
+
+        <BgText />
       </div>
 
       <div className="bottom_content">
         <p className="copyright">
           © JazBah -<span className="date">2023</span>
-          <Link
+          {/* <Link
             className="ml-2 cursor-pointer"
             href={"/admin"}
             data-cursor-type="link"
           >
             Admin
-          </Link>
+          </Link> */}
         </p>
 
         <ul className="social">

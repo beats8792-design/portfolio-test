@@ -21,7 +21,7 @@ export default function PageLoad() {
       setAnimate(true);
 
       const tween = gsap.to(loaderRef.current, {
-        yPercent: -100,
+        scale: 2,
         duration: 0.5,
         ease: "power1.in",
         onComplete: () => {

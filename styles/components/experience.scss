@@ -1,0 +1,189 @@
+.jb_experience_section {
+    padding: 60px 0;
+    overflow: hidden;
+
+    .experience_accordion {
+        position: relative;
+
+        .notification {
+            background-color: var(--c-accent);
+            color: var(--c-white, #010208);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--f-link-1);
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-transform: capitalize;
+            pointer-events: none;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .accordion_item {
+            // margin-bottom: 32px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.50);
+
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 8px 0;
+
+                .left_box {
+                    .title {
+                        color: var(--c-white, #FFF);
+                        font-family: var(--f-link-1);
+                        font-size: 32px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 40px;
+                    }
+                }
+
+                .right_box {
+                    text-align: right;
+
+                    .title {
+                        color: var(--c-white, #FFF);
+                        font-family: var(--f-link-1);
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 32px;
+                        margin-bottom: 8px;
+                    }
+
+                    .date {
+                        color: var(--c-white, #FFF);
+                        font-family: var(--f-pera-1);
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                }
+
+                &,
+                & * {
+                    cursor: pointer;
+                }
+            }
+
+            .content_wrapper {
+                .content {
+                    padding: 16px 0;
+
+                    p {
+                        color: var(--c-white, #FFF);
+                        font-family: var(--f-pera-1);
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        margin: 8px 0;
+                    }
+
+                    strong {
+                        font-weight: 600;
+                    }
+
+                    a {
+                        text-decoration: underline;
+                        text-underline-offset: 4px;
+
+                        &,
+                        & * {
+                            cursor: pointer;
+                        }
+                    }
+
+                    ul {
+                        margin: 8px 0;
+                        padding-left: 16px;
+                        list-style: disc;
+
+                        li {
+                            color: var(--c-white, #FFF);
+                            font-family: var(--f-pera-1);
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                            margin-bottom: 8px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .home_experience_section {
+        .experience_accordion {
+            .notification {
+                display: none;
+            }
+
+            .accordion_item {
+                margin-bottom: 16px;
+                .header {
+                    padding: 4px 0;
+
+                    .left_box {
+                        .title {
+                            font-size: 18px;
+                        }
+                    }
+
+                    .right_box {
+                        .title {
+                            font-size: 16px;
+                            line-height: 1;
+                            margin-bottom: 4px;
+                        }
+
+                        .date {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .content_wrapper {
+                    .content {
+                        p {
+                            font-size: 12px;
+                            margin: 4px 0;
+                        }
+
+                        a {
+                            text-underline-offset: 2px;
+                        }
+
+                        ul {
+                            margin: 4px 0;
+
+                            li {
+                                font-size: 12px;
+                                margin-bottom: 4px;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

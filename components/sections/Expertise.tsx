@@ -31,7 +31,7 @@ const expertises = [
 export default function Expertise() {
   return (
     <section className="home_expertise_section">
-      <div className="w-full max-w-7xl mx-auto px-4">
+      <div className="container mx-auto px-4">
         <Heading title="Core Skills" />
 
         <div className="expertise_wrapper">

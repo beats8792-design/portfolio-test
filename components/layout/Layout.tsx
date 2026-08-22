@@ -1,5 +1,5 @@
 import Provider from "../providers/Provider";
-import Footer from "./Footer";
+import Footer from "./footer/Footer";
 import Header from "./Header";
 import Navigation from "./Navigation";
 import PageLoad from "./PageLoad";

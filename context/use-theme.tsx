@@ -88,13 +88,14 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 
   const startNavigating = async (url: string) => {
     setIsNavigating(true);
+    router.prefetch(url);
+    
     if(navState === "open"){
       setNavState("close");
     };
 
     await sleep((DRAW_IN_DURATION + MAX_STAGGER_DELAY) * 1000);
 
-    router.prefetch(url);
     router.push(url);
 
     await sleep(PAUSE_DURATION * 1000);
