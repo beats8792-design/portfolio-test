@@ -1,10 +1,7 @@
 "use client";
-import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Image from "next/image";
-import Button from "../others/Button";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import React, { useEffect, useRef } from "react";
+import ProjectSmallCard from "../card/ProjectSmallCard";
 export interface Project {
   title: string;
   description: string;
@@ -214,47 +211,20 @@ const MagicBento: React.FC<MagicBentoProps> = ({
       )}
       <div ref={gridRef} className="magic-bento-grid">
         {projects.map((project, index) => (
-          <div
+          <ProjectSmallCard
             key={`${project.title}-${index}`}
             className="magic-bento-card"
-            onClick={handleCardClick}
-          >
-            <Image
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-              width={800}
-              height={800}
-            />
-            <div className="magic-bento-overlay" />
-            <div className="magic-bento-content">
-              <h3
-                className={`magic-bento-title ${textAutoHide ? "text-clamp-1" : ""}`}
-              >
-                {project.title}
-              </h3>
-              <div className="magic-bento-tags">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="magic-bento-tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <p
-                className={`magic-bento-description ${textAutoHide ? "text-clamp-2" : ""}`}
-              >
-                {project.description}
-              </p>
-              <div className="magic-bento-actions">
-                <Link href={project.git_url} target="_blank" className="w-fit block">
-                  <div className="flex items-center justify-center gap-2 hover:underline !cursor-pointer">
-                    View Project
-                    <ArrowUpRight />
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div>
+            project={{
+              id: index,
+              title: project.title,
+              tags: project.tags,
+              desk_image: project.image,
+              mobile_image: project.image,
+              description: project.description,
+              view_link: project.live_url,
+              code_link: project.git_url,
+            }}
+          />
         ))}
       </div>
     </>

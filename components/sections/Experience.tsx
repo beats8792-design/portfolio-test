@@ -1,11 +1,10 @@
-import Heading from "../others/Heading";
 import {
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
 } from "@/components/others/Accordion";
-import { ChevronRight } from "lucide-react";
+import Heading from "../others/Heading";
 import "./../../styles/components/experience.scss";
 
 const experiences = [

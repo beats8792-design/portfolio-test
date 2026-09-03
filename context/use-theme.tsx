@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/set-state-in-render */
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import {
@@ -41,16 +43,21 @@ type ThemeContextType = {
   isNavigating: boolean;
   setIsNavigating: (state: boolean) => void;
   startNavigating: (url: string) => void;
+
+  // device type
+  deviceType: "desktop" | "mobile";
+  setDeviceType: (deviceType: "desktop" | "mobile") => void;
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
   const [mode, setMode] = useState<"light" | "dark">("dark");
-  const [scrolled, setScrolled] = useState<number>(0);
+  const [scrolled, setScrolled] = useState(0);
   const [navState, setNavState] = useState<"open" | "close">("close");
   const [pageLoaded, setPageLoaded] = useState(false);
   const [animate, setAnimate] = useState(false);
+  const [deviceType, setDeviceType] = useState<"desktop" | "mobile">("desktop");
 
   // transition states
   const router = useRouter();
@@ -63,14 +70,19 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   }, [mode]);
 
   useLenis((lenis) => {
-    setScrolled(lenis.progress * 100);
+    const progress = Math.round(lenis.progress * 10);
+
+    setScrolled((prev) => {
+      if (prev === progress) return prev;
+      return progress;
+    });
   });
 
+  // page load state
+  const handleLoad = () => {
+    setPageLoaded(true);
+  };
   useEffect(() => {
-    const handleLoad = () => {
-      setPageLoaded(true);
-    };
-
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", handleLoad);
     } else {
@@ -89,10 +101,10 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   const startNavigating = async (url: string) => {
     setIsNavigating(true);
     router.prefetch(url);
-    
-    if(navState === "open"){
+
+    if (navState === "open") {
       setNavState("close");
-    };
+    }
 
     await sleep((DRAW_IN_DURATION + MAX_STAGGER_DELAY) * 1000);
 
@@ -100,9 +112,26 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 
     await sleep(PAUSE_DURATION * 1000);
     await sleep((DRAW_OUT_DURATION + MAX_STAGGER_DELAY) * 1000);
-    
+
     setIsNavigating(false);
   };
+
+  // device type
+  const handleDeviceTypeChange = () => {
+    const newDeviceType = window.innerWidth > 768 ? "desktop" : "mobile";
+
+    setDeviceType((prev) => (prev === newDeviceType ? prev : newDeviceType));
+  };
+
+  useEffect(() => {
+    handleDeviceTypeChange();
+
+    window.addEventListener("resize", handleDeviceTypeChange);
+
+    return () => {
+      window.removeEventListener("resize", handleDeviceTypeChange);
+    };
+  }, []);
 
   return (
     <ThemeContext.Provider
@@ -120,6 +149,8 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
         isNavigating,
         setIsNavigating,
         startNavigating,
+        deviceType,
+        setDeviceType,
       }}
     >
       {children}

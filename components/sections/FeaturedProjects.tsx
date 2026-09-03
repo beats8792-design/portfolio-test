@@ -74,25 +74,6 @@ const projects = [
     live_url: "https://finlyfinance.vercel.app/",
     git_url: "https://github.com/jaz-bah/finly",
   },
-  {
-    title: "Codebot",
-    description:
-      "CodeBot is a personal coding assistant that securely stores your code snippets, presets, and reusable components.",
-    tags: ["Typescript", "Tailwind", "Mongodb", "Next.js"],
-    image:
-      "https://res.cloudinary.com/dukal2ihk/image/upload/v1762795105/portfolio/o7ozkwkbbqh2inalee48.png",
-    live_url: "https://codebot-2-0.vercel.app/",
-    git_url: "https://github.com/jaz-bah/codebot-2.0",
-  },
-  {
-    title: "Todo App",
-    description: "A todo app with order management.",
-    tags: ["Tailwind", "Shadcn", "Mongodb", "Typescript", "Next.js"],
-    image:
-      "https://res.cloudinary.com/dukal2ihk/image/upload/v1762795337/portfolio/f0yiux2ujwo47hqng7y6.png",
-    live_url: "https://jazbahtodo.vercel.app/",
-    git_url: "https://github.com/jaz-bah/todo",
-  },
 ];
 
 export default function FeaturedProjects() {
@@ -105,7 +86,7 @@ export default function FeaturedProjects() {
         textAutoHide
         enableBorderGlow
         clickEffect
-        spotlightRadius={400}
+        spotlightRadius={40}
         glowColor="255, 92, 23"
       />
     </div>

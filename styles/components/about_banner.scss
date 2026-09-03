@@ -1,0 +1,105 @@
+.about_banner_section {
+    padding: 60px 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    .profile_image {
+        width: 90%;
+        max-width: 300px;
+        aspect-ratio: 1/1;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        animation: morph 8s ease-in-out 1s infinite;
+        box-shadow: inset 0 0 0 9px hsla(0, 0%, 100%, 0.3);
+        background-image: url("/static/images/profile.jpg");
+        background-blend-mode: multiply;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .heading {
+        color: var(--c-white);
+        font-family: var(--f-link-1);
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 64px;
+        text-transform: capitalize;
+
+        .name {
+            font-family: var(--f-h-1);
+            text-transform: uppercase;
+        }
+    }
+
+    .subheading {
+        color: var(--c-white);
+        font-family: var(--f-link-1);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1;
+        text-transform: capitalize;
+    }
+
+    .about_banner_marque_wrapper {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 110%;
+        height: auto;
+        z-index: -1;
+
+        .about_banner_marque {
+            background-color: var(--c-dark-light);
+
+            &.one {
+                rotate: 5deg;
+
+                .text {
+                    color: var(--c-dark-light, #010208);
+                }
+            }
+
+            &.tow {
+                rotate: -5deg;
+                background-color: var(--c-accent);
+                margin-top: -30px;
+
+                .text {
+                    color: var(--c-accent, #010208);
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .about_banner_section {
+        .about_banner_marque_wrapper {
+            bottom: 70%;
+        }
+    }
+}

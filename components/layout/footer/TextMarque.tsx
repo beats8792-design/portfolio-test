@@ -1,6 +1,5 @@
 import { Marquee } from "@/components/animations/Marquee";
-import StarIcon from "@/components/icons/StarIcon";
-import React from "react";
+import CodeIcon from "@/components/icons/CodeIcon";
 
 const texts = [
   "Front-End",
@@ -11,16 +10,20 @@ const texts = [
   "Chrome Extension",
 ];
 
-export default function TextMarque() {
+interface Props {
+  reverse?: boolean;
+}
+
+export default function TextMarque({ reverse = false }: Props) {
   const repeatedTexts = [...texts, ...texts];
   return (
     <div className="footer_marque_wrapper text_marque_wrapper">
-      <Marquee>
+      <Marquee reverse={reverse}>
         {repeatedTexts.map((text, index) => (
           <span key={index + "m2"} className="item">
             <span className="text">{text}</span>
             <span className="icon">
-              <StarIcon />
+              <CodeIcon />
             </span>
           </span>
         ))}
