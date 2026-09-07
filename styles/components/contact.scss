@@ -1,0 +1,153 @@
+.contact_section {
+    padding: 120px 0;
+
+    .contact_list {
+        margin-bottom: 30px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+
+            .contact_icon {
+                width: 30px;
+                height: 30px;
+                background-color: #000;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .contact_text {
+                h4 {
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 24px;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 24px;
+
+                    a {
+
+                        &,
+                        & * {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        li {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease-in-out;
+            padding: 10px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+                stroke: #fff;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+                background-color: var(--c-dark-light);
+
+                svg {
+                    stroke: var(--c-accent);
+                }
+            }
+        }
+    }
+
+    .contact_form {
+        padding: 10px;
+        margin-top: 50px;
+
+        .input_wrapper {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            label {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1;
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                transition: all ease-in-out 0.1s;
+            }
+
+            input,
+            textarea {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 24px;
+                padding: 20px 0px 10px;
+                height: 55px;
+                min-height: 55px;
+                border: none;
+                outline: none;
+
+                &:focus,
+                &:hover {
+                    border: none;
+                    outline: none;
+                }
+
+                &::-webkit-resizer,
+                &::-webkit-scrollbar,
+                &::-webkit-input-placeholder {
+                    display: none;
+                    opacity: 0;
+                }
+
+                &:focus ~ label {
+                    top: 0;
+                    left: 0;
+                    transform: translateY(0%);
+                    font-size: 12px;
+                }
+            }
+
+            .bottom_bar {
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: var(--c-white);
+            }
+        }
+
+        .button {
+            width: 200px;
+            margin-top: 40px;
+        }
+    }
+}

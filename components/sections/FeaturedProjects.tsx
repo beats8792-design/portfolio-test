@@ -10,7 +10,7 @@ const projects = [
       "Built with HTML, SCSS & JS, Beats delivers slick, immersive layouts, a custom cursor, and a stylish, smooth experience that hooks users and sells with personality.",
     tags: ["HTML/SCSS", "Javascript"],
     image:
-      "https://res.cloudinary.com/dukal2ihk/image/upload/v1754748610/portfolio/hdpb8noaryifmu4oboxs.png",
+      "/static/images/beats-mobile.png",
     live_url: "https://jaz-bah.github.io/beats/",
     git_url: "https://github.com/jaz-bah/beats",
   },
@@ -20,7 +20,7 @@ const projects = [
       "Travela, built with HTML, SCSS & JS, offers clean layouts, fresh visuals & smooth interactions, guiding visitors from curiosity to booking with effortless, modern style.",
     tags: ["HTML/SCSS", "Javascript"],
     image:
-      "https://res.cloudinary.com/dukal2ihk/image/upload/v1754748711/portfolio/mduc68qewpjkj3o9ff9v.png",
+      "/static/images/travela-mobile.png",
     live_url: "https://jaz-bah.github.io/travela/",
     git_url: "https://github.com/jaz-bah/travela",
   },
@@ -30,7 +30,7 @@ const projects = [
       "L’Gran, built with HTML, SCSS & JS, fuses fine dining aesthetics with modern design, rich visuals, elegant typography & smooth interactions, serving luxury on every scroll.",
     tags: ["HTML/SCSS", "Javascript"],
     image:
-      "https://res.cloudinary.com/dukal2ihk/image/upload/v1754756367/portfolio/xatzrvyrpxrgnyh6eetb.png",
+      "/static/images/lgran-pc.png",
     live_url: "https://jaz-bah.github.io/lgran/",
     git_url: "https://github.com/jaz-bah/lgran",
   },
@@ -40,7 +40,7 @@ const projects = [
       "Burger House, built with HTML, SCSS & JS, serves bold visuals, mouth-watering layouts & clean UI, a hearty design that brings you closer to that first juicy bite with every scroll.",
     tags: ["HTML/SCSS", "Javascript"],
     image:
-      "https://res.cloudinary.com/dukal2ihk/image/upload/v1754756530/portfolio/xxijga1yuo1dlf48a789.png",
+      "/static/images/burger-pc.png",
     live_url: "https://jaz-bah.github.io/burger/",
     git_url: "https://github.com/jaz-bah/burger",
   },
@@ -50,7 +50,7 @@ const projects = [
       "Number, built with raw JavaScript, is a no-frills math playground, convert, calculate & explore from binary to decimals, factorials to logs. Pure, hands-on tools for true number lovers.",
     tags: ["HTML/SCSS", "Javascript"],
     image:
-      "https://res.cloudinary.com/dukal2ihk/image/upload/v1754756635/portfolio/abv1ebxg6ck2eusm5vgd.png",
+      "/static/images/number-pc.png",
     live_url: "https://jaz-bah.github.io/number/",
     git_url: "https://github.com/jaz-bah/number",
   },
@@ -60,7 +60,7 @@ const projects = [
       "E-Pay, built with HTML, SCSS & JS, pairs minimal design, modern typography & smooth animations for a clean fintech vibe that’s as secure as it looks.",
     tags: ["HTML/SCSS", "Javascript"],
     image:
-      "https://res.cloudinary.com/dukal2ihk/image/upload/v1754756744/portfolio/hzlm2lvgcaecxwzhivbs.png",
+      "/static/images/epay-pc.png",
     live_url: "https://jaz-bah.github.io/epay/",
     git_url: "https://github.com/jaz-bah/epay",
   },
@@ -70,7 +70,7 @@ const projects = [
       "Finly, built with Next.js, ShadCN & NextAuth, offers a sleek interface for tracking income, expenses & savings, with recurring transactions, real-time analytics & PWA support.",
     tags: ["Next.js", "Typescript"],
     image:
-      "https://res.cloudinary.com/dukal2ihk/image/upload/v1754757127/portfolio/qk4ozgiwfxwaoghwrhuk.png",
+      "/static/images/codebot-pc.png",
     live_url: "https://finlyfinance.vercel.app/",
     git_url: "https://github.com/jaz-bah/finly",
   },
