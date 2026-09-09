@@ -1,7 +1,6 @@
-import { Star } from "lucide-react";
-import Link from "next/link";
+"use client";
+import { useTheme } from "@/context/use-theme";
 import StarIcon from "../icons/StarIcon";
-// import StarIcon from "../icons/StarIcon";
 
 interface Props {
   title: string;
@@ -9,9 +8,10 @@ interface Props {
 }
 
 export default function Heading({ title, link }: Props) {
+  const { startNavigating } = useTheme();
   return (
     <div className="heading_box">
-      <div className="left_box" data-cursor-type="heading">
+      <div className="left_box">
         <div className="icon_box">
           <StarIcon />
         </div>
@@ -20,10 +20,10 @@ export default function Heading({ title, link }: Props) {
 
       {link && (
         <div className="right_box">
-          <Link href={link} className="link" data-cursor-type="link">
+          <div onClick={() => startNavigating(link)} className="link">
             <span className="first">View All</span>
             <span className="second">View All</span>
-          </Link>
+          </div>
         </div>
       )}
     </div>

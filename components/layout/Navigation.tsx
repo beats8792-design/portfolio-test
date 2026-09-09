@@ -1,14 +1,12 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { ArrowUpRight, X } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useRef, useCallback } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-
+import { useCallback, useEffect, useRef } from "react";
 import { useTheme } from "@/context/use-theme";
 import Button from "../others/Button";
-
 import "./../../styles/components/navigation.scss";
 
 const menus = [
@@ -119,7 +117,7 @@ export default function Navigation() {
     <div ref={sectionRef} className="jb_navigation">
       <div className="top_content">
         <div className="location content">
-          Local / 24° 30&apos; 0.0000&quot; N
+          Hold [Ctrl] To quick navigate - (Close it first)
         </div>
 
         <button
@@ -131,9 +129,9 @@ export default function Navigation() {
           <X />
         </button>
 
-        <Link href="/contact" prefetch={true}>
+        <div className="flex justify-end" onClick={() => startNavigating("/contact")}>
           <Button className="content">Message</Button>
-        </Link>
+        </div>
       </div>
 
       <div className="middle_content">

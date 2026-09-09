@@ -102,6 +102,7 @@
 
 @media only screen and (max-width: 768px) {
     .about_education_section {
+        padding: 30px 0;
         .education_content {
             .education_row {
                 flex-direction: column;
@@ -128,6 +129,12 @@
                     .circle,
                     .circle_inner{
                         display: none;
+                    }
+                }
+
+                &:nth-last-child(1) {
+                    .right_box {
+                        padding-bottom: 0px;
                     }
                 }
             }

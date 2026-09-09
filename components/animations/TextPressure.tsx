@@ -185,7 +185,8 @@ const TextPressure: React.FC<TextPressureProps> = ({
       <style>{`
         @import url('${fontUrl}');
 
-        .flex {
+        .text-pressure-title.flex,
+        .text-pressure-title .flex {
           display: flex;
           justify-content: space-between;
         }

@@ -1,3 +1,4 @@
+import { BackgroundRippleEffect } from "../animations/BackgroundRipple";
 import { TextAnimate } from "../animations/TextAnimate";
 import TextMarque from "../layout/footer/TextMarque";
 import "./../../styles/components/about_banner.scss";
@@ -5,7 +6,8 @@ import "./../../styles/components/about_banner.scss";
 export default function MorphBanner() {
   return (
     <section className="about_banner_section">
-      <div className="container mx-auto px-4">
+      <BackgroundRippleEffect />
+      <div className="container mx-auto px-4 relative z-[90]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="profile_image"></div>
           <div className="content">

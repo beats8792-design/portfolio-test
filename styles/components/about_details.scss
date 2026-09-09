@@ -1,15 +1,19 @@
 .about_deatils_section {
-    padding: 120px 0;
+  padding: 120px 0;
 
-    .text_content {
-        .description {
-            color: var(--c-white, #FFF);
-            font-family: var(--f-pera-1);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            margin-bottom: 32px;
-        }
+  .text_content {
+    .description {
+      color: var(--c-white, #fff);
+      font-family: var(--f-pera-1);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 32px;
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 30px 0;
+  }
 }

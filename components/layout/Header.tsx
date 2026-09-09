@@ -1,10 +1,13 @@
 "use client";
 
 import { useTheme } from "@/context/use-theme";
+import { useLenis } from "lenis/react";
+import { useState } from "react";
 import "./../../styles/components/header.scss";
 
 export default function Header() {
   const { scrolled, navState, setNavState } = useTheme();
+  const [progress, setProgress] = useState(0);
 
   const scrollTop = () => {
     window.scrollTo({
@@ -12,7 +15,9 @@ export default function Header() {
       behavior: "smooth",
     });
   };
-  
+
+  useLenis((lenis) => setProgress(lenis.progress * 100));
+
   return (
     <div className="jb_header">
       <div
@@ -30,7 +35,7 @@ export default function Header() {
 
       <div className="scroller">
         <span
-          className={`scroll_to_top ${scrolled > 90 ? "visible" : ""}`}
+          className={`scroll_to_top ${scrolled > 9 ? "visible" : ""}`}
           onClick={scrollTop}
           data-cursor-type="link"
         >
@@ -41,7 +46,7 @@ export default function Header() {
           <div className="scroll_track">
             <div
               className="scroll_thumb"
-              style={{ right: `${scrolled}%` }}
+              style={{ right: `${progress}%` }}
             ></div>
           </div>
         </div>

@@ -9,8 +9,8 @@ export default function page() {
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectBanner />
       </Suspense>
-      <FeaturedSkills />
       <ProjectGrid />
+      <FeaturedSkills />
     </>
   );
 }

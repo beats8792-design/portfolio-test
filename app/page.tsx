@@ -1,17 +1,17 @@
 import Experience from "@/components/sections/Experience";
 import Expertise from "@/components/sections/Expertise";
-import FeaturedProjects from "@/components/sections/FeaturedProjects";
-import FeaturedSkills from "@/components/sections/FeaturedSkills";
+import FeaturedProjectTwo from "@/components/sections/FeaturedProjectTwo";
 import HomeBanner from "@/components/sections/HomeBanner";
+import Skills from "@/components/sections/Skills";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <HomeBanner />
       <Expertise />
-      <FeaturedProjects />
+      <FeaturedProjectTwo />
+      <Skills />
       <Experience />
-      <FeaturedSkills />
-    </div>
+    </>
   );
 }
