@@ -1,9 +1,8 @@
 "use client";
 import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 import Image from "next/image";
 import { useRef } from "react";
-import { gsap } from "gsap";
-import { useRouter } from "next/navigation";
 
 interface Props {
   image_one: string;
@@ -11,9 +10,13 @@ interface Props {
   title: string;
   link: string;
 }
-export default function ProjectCardTwo({ image_one, image_two, title, link }: Props) {
+export default function ProjectCardTwo({
+  image_one,
+  image_two,
+  title,
+  link,
+}: Props) {
   const card = useRef<HTMLDivElement>(null);
-  const router = useRouter();
   useGSAP(
     () => {
       const productCard = card.current as HTMLDivElement;
@@ -60,7 +63,11 @@ export default function ProjectCardTwo({ image_one, image_two, title, link }: Pr
     { scope: card },
   );
   return (
-    <div ref={card} className="project_card_2" onClick={() => router.push(link)}>
+    <div
+      ref={card}
+      className="project_card_2"
+      onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
+    >
       <div className="svg_border">
         <svg
           width="99%"
@@ -80,22 +87,12 @@ export default function ProjectCardTwo({ image_one, image_two, title, link }: Pr
       <div className="image_content w-full h-full flex items-center justify-center">
         <div className="img_one w-full h-full flex items-center justify-center">
           <div className="imgbox_full">
-            <Image
-              src={image_one}
-              alt=""
-              width={407}
-              height={411}
-            />
+            <Image src={image_one} alt="" width={407} height={411} />
           </div>
         </div>
         <div className="img_two w-full h-full flex items-center justify-center">
           <div className="imgbox_full">
-            <Image
-              src={image_two}
-              alt=""
-              width={407}
-              height={411}
-            />
+            <Image src={image_two} alt="" width={407} height={411} />
           </div>
         </div>
       </div>
