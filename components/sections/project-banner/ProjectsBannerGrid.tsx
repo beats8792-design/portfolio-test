@@ -4,111 +4,28 @@ import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger, SplitText } from "gsap/all";
 import { useRef } from "react";
 import ProjectCardTwo from "../../card/ProjectCardTwo";
+import { shopifyProjects } from "../../../data/shopify-projects";
 import "./../../../styles/components/projects_banner.scss";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
-
-const projects = [
-  {
-    media: [
-      "/static/images/trail-image (1).jpg",
-      "/static/images/trail-image (2).jpg",
-    ],
-    type: "image",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (2).jpg",
-      "/static/images/trail-image (3).jpg",
-    ],
-    type: "image",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (3).jpg",
-      "/static/images/trail-image (4).jpg",
-    ],
-    type: "image",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (4).jpg",
-      "/static/images/trail-image (5).jpg",
-    ],
-    type: "video",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (5).jpg",
-      "/static/images/trail-image (6).jpg",
-    ],
-    type: "image",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (6).jpg",
-      "/static/images/trail-image (1).jpg",
-    ],
-    type: "image",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (1).jpg",
-      "/static/images/trail-image (2).jpg",
-    ],
-    type: "image",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (2).jpg",
-      "/static/images/trail-image (3).jpg",
-    ],
-    type: "image",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (3).jpg",
-      "/static/images/trail-image (4).jpg",
-    ],
-    type: "image",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (4).jpg",
-      "/static/images/trail-image (5).jpg",
-    ],
-    type: "video",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (5).jpg",
-      "/static/images/trail-image (6).jpg",
-    ],
-    type: "image",
-    path: "/",
-  },
-  {
-    media: [
-      "/static/images/trail-image (6).jpg",
-      "/static/images/trail-image (1).jpg",
-    ],
-    type: "image",
-    path: "/",
-  },
-];
 
 export default function ProjectsBannerGrid() {
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  const rowOneProjects = [
+    ...shopifyProjects.slice(0, 8),
+    ...shopifyProjects.slice(0, 8),
+  ];
+  const rowTwoProjects = [
+    ...shopifyProjects.slice(8, 16),
+    ...shopifyProjects.slice(8, 16),
+  ];
+  const rowThreeProjects = [
+    ...shopifyProjects.slice(16, 24),
+    ...shopifyProjects.slice(16, 24),
+  ];
+  const rowFourProjects = [
+    ...shopifyProjects.slice(24, 32),
+    ...shopifyProjects.slice(24, 32),
+  ];
 
   useGSAP(
     () => {
@@ -222,45 +139,53 @@ export default function ProjectsBannerGrid() {
       <div className="grid_content">
         <div className="grid_wrapper">
           <div className="grid_column banner_col_one">
-            {projects &&
-              projects.map((project, index) => (
+            {rowOneProjects &&
+              rowOneProjects.map((project, index) => (
                 <ProjectCardTwo
                   key={index}
-                  image_one={project.media[0]}
-                  image_two={project.media[1]}
+                  image_one={project.image_1}
+                  image_two={project.image_2}
+                  title={project.title}
+                  link={project.link}
                 />
               ))}
           </div>
 
           <div className="grid_column banner_col_two">
-            {projects &&
-              projects.map((project, index) => (
+            {rowTwoProjects &&
+              rowTwoProjects.map((project, index) => (
                 <ProjectCardTwo
                   key={index}
-                  image_one={project.media[0]}
-                  image_two={project.media[1]}
+                  image_one={project.image_1}
+                  image_two={project.image_2}
+                  title={project.title}
+                  link={project.link}
                 />
               ))}
           </div>
 
           <div className="grid_column banner_col_three">
-            {projects &&
-              projects.map((project, index) => (
+            {rowThreeProjects &&
+              rowThreeProjects.map((project, index) => (
                 <ProjectCardTwo
                   key={index}
-                  image_one={project.media[0]}
-                  image_two={project.media[1]}
+                  image_one={project.image_1}
+                  image_two={project.image_2}
+                  title={project.title}
+                  link={project.link}
                 />
               ))}
           </div>
 
           <div className="grid_column banner_col_four">
-            {projects &&
-              projects.map((project, index) => (
+            {rowFourProjects &&
+              rowFourProjects.map((project, index) => (
                 <ProjectCardTwo
                   key={index}
-                  image_one={project.media[0]}
-                  image_two={project.media[1]}
+                  image_one={project.image_1}
+                  image_two={project.image_2}
+                  title={project.title}
+                  link={project.link}
                 />
               ))}
           </div>

@@ -3,13 +3,17 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
 import { gsap } from "gsap";
+import { useRouter } from "next/navigation";
 
 interface Props {
   image_one: string;
   image_two: string;
+  title: string;
+  link: string;
 }
-export default function ProjectCardTwo({ image_one, image_two }: Props) {
+export default function ProjectCardTwo({ image_one, image_two, title, link }: Props) {
   const card = useRef<HTMLDivElement>(null);
+  const router = useRouter();
   useGSAP(
     () => {
       const productCard = card.current as HTMLDivElement;
@@ -56,11 +60,11 @@ export default function ProjectCardTwo({ image_one, image_two }: Props) {
     { scope: card },
   );
   return (
-    <div ref={card} className="project_card_2">
+    <div ref={card} className="project_card_2" onClick={() => router.push(link)}>
       <div className="svg_border">
         <svg
-          width="100%"
-          height="100%"
+          width="99%"
+          height="99%"
           viewBox="0 0 407 411"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -73,8 +77,8 @@ export default function ProjectCardTwo({ image_one, image_two }: Props) {
           ></path>
         </svg>
       </div>
-      <div className="image_content">
-        <div className="img_one">
+      <div className="image_content w-full h-full flex items-center justify-center">
+        <div className="img_one w-full h-full flex items-center justify-center">
           <div className="imgbox_full">
             <Image
               src={image_one}
@@ -84,7 +88,7 @@ export default function ProjectCardTwo({ image_one, image_two }: Props) {
             />
           </div>
         </div>
-        <div className="img_two">
+        <div className="img_two w-full h-full flex items-center justify-center">
           <div className="imgbox_full">
             <Image
               src={image_two}
@@ -97,7 +101,7 @@ export default function ProjectCardTwo({ image_one, image_two }: Props) {
       </div>
       <div className="info_content">
         <h2 className="title">
-          JAZBAH
+          {title}
           <div className="icon_box">
             <svg
               xmlns="http://www.w3.org/2000/svg"
